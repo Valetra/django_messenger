@@ -41,6 +41,19 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'channels',
 ]
+
+'''
+This code defines the channel layer in which we will be working and sharing data.
+For the deployment and production level,
+do not use InMemoryChannelLayer, because there are huge chances for your data leakage.
+This is not good for production. For production use the Redis channel.
+'''
+CHANNEL_LAYERS = {
+    "default": {
+        "BACKEND": "channels.layers.InMemoryChannelLayer"
+    }
+}
+
 ASGI_APPLICATION = 'chat_project.asgi.application'
 
 MIDDLEWARE = [
