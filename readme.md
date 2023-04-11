@@ -2,3 +2,5 @@ This is a messenger project that I developed for educational purposes to study t
 
 Run before start server:
 $ docker run -p 6379:6379 -d redis:5
+
+TODO: create a room creating view
