@@ -1,7 +1,12 @@
 version: "3"
 services:
-    todo:
+    messenger:
         build: .
-        command: python manage.py runserver 0.0.0.0:8002 && docker run -p 6379:6379 -d redis:5
+        command: python manage.py runserver 0.0.0.0:8002
         ports:
             - 8002:8002
+        depends_on:
+            - redis
+
+    redis:
+        image: redis:alpine

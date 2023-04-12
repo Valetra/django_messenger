@@ -6,4 +6,3 @@ ADD . /app
 RUN apk add build-base libffi-dev
 RUN pip install -r requirements.txt
 RUN python manage.py migrate
-#RUN docker run -p 6379:6379 -d redis:5
